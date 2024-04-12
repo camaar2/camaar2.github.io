@@ -18,12 +18,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '20'
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm ci
+        run: npx pnpm ci
       - name: Build
-        run: pnpm run dev
+        run: npx pnpm run dev
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

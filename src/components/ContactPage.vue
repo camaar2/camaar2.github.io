@@ -54,26 +54,25 @@ export default {
 }
 
 .contact-item img {
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Adjust size as needed */
+  width: 50px;
+  height: 50px;
   margin-right: 15px;
 }
 .contact-heading {
   font-size: 45px;
   color : #da6b8b;
-  font-family: 'Bebas Neue', sans-serif; /* Change font */
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .contact-text {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px; /* Adjust size as needed */
+  font-size: 24px;
 }
 
 .contact-link {
   font-family: 'Bebas Neue', sans-serif;
   color: black;
-  
-  font-size: 18px; /* Adjust size as needed */
+  font-size: 18px;
 }
 @media only screen and (max-width: 767px)
 {
@@ -97,26 +96,26 @@ export default {
   }
 
   .contact-item img {
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Adjust size as needed */
+    width: 50px;
+    height: 50px;
     margin-right: 15px;
   }
   .contact-heading {
     margin-top: 100px;
     font-size: 45px;
     color : #da6b8b;
-    font-family: 'Bebas Neue', sans-serif; /* Change font */
+    font-family: 'Bebas Neue', sans-serif;
   }
 
   .contact-text {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
   }
 
   .contact-link {
     font-family: 'Bebas Neue', sans-serif;
     color: black;
-    font-size: 18px; /* Adjust size as needed */
+    font-size: 18px;
   }
 }
 </style>

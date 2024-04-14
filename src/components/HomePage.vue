@@ -69,7 +69,7 @@ h1 {
 }
 
 .me-image {
-  width: 420px; /* Adjust width as needed */
+  width: 420px; 
   height: auto;
   position: absolute;
   top: 30%;
@@ -130,7 +130,7 @@ h1 {
   }
 
   .me-image {
-    width: 200px; /* Adjust width as needed */
+    width: 200px; 
     height: auto;
     position: absolute;
     top: 24%;

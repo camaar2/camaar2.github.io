@@ -8,14 +8,12 @@
           </router-link>
         </div>
         <div class="nav-links">
-          <!-- Regular links for larger screens -->
           <div class="regular-links" v-if="!isPhone">
             <router-link to="/" class="nav-link" active-class="active-link">HomePage</router-link>
             <router-link to="/about_me" class="nav-link" active-class="active-link">About Me</router-link>
             <router-link to="/projects" class="nav-link" active-class="active-link">Projects</router-link>
             <router-link to="/contact" class="nav-link" active-class="active-link">Contact</router-link>
           </div>
-          <!-- Dropdown menu for phones -->
           <div class="dropdown" v-else>
             <button class="dropbtn" @click="toggleDropdown">&#61;</button>
             <div class="dropdown-content" :class="{ active: showDropdown }">
@@ -40,13 +38,11 @@ const isPhone = ref(false);
 const showDropdown = ref(false);
 
 onMounted(() => {
-  // Check screen size on mount and whenever the window is resized
   checkScreenSize();
   window.addEventListener('resize', checkScreenSize);
 });
 
 function checkScreenSize() {
-  // Set isPhone to true if the window width is less than 640 pixels
   isPhone.value = window.innerWidth < 640;
 }
 
@@ -83,7 +79,6 @@ function toggleDropdown() {
   margin-top: -50px;
 }
 
-/* Positioning the route buttons to the right */
 .nav-links {
   display: flex;
   justify-content: flex-end;
@@ -101,7 +96,7 @@ function toggleDropdown() {
     align-items: center;
   }
   .bg-pink-200 {
-    background-size: cover; /* Fix background size for phones */
+    background-size: cover; 
   }
   .nav-link {
     cursor: pointer;
@@ -125,15 +120,15 @@ function toggleDropdown() {
     margin-top: -10px;
   }
   .nav-links {
-    margin-top: -90px; /* Adjusted margin top for smaller screens */
+    margin-top: -90px; 
   }
   .bg-pink-200 {
-    background-size: contain; /* Making background picture smaller */
+    background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
   }
   .nav-link {
-    font-size: 0.8rem; /* Adjusted font size for smaller screens */
+    font-size: 0.8rem;
   }
   .dropbtn {
     cursor: pointer;
@@ -146,8 +141,7 @@ function toggleDropdown() {
     border-radius: 10px;
     margin-top: 10px;
   }
-
-  /* Dropdown content (hidden by default) */
+  
   .dropdown-content {
     display: none;
     position: absolute;
@@ -158,13 +152,11 @@ function toggleDropdown() {
     top: 60px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   }
-
-  /* Show the dropdown content when dropdown is active */
+  
   .dropdown-content.active {
     display: block;
   }
-
-  /* Dropdown links */
+  
   .dropdown-content a {
     color: #000000;
     padding: 8px 16px;
@@ -172,28 +164,23 @@ function toggleDropdown() {
     display: block;
     transition: background-color 0.2s, color 0.2s;
   }
-
-  /* Style the dropdown links on hover */
+  
   .dropdown-content a:hover {
     background-color: #f2afb8;
     color: white;
   }
-
-  /* Close button */
+  
   .closebtn {
     float: right;
     cursor: pointer;
     padding: 8px 16px;
   }
-
-  /* Regular links for larger screens */
+  
   .regular-links {
     display: flex;
     gap: 1rem;
   }
-
-
-  /* Positioning the route buttons to the right */
+  
   .nav-links {
     display: flex;
     justify-content: flex-end;

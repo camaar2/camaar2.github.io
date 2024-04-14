@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="container">
-      <img src="/me.jpg" alt="Me" class="profile-pic">
+      <img src="/mina.jpg" alt="Me" class="profile-pic">
       <img src="/paperclip.png" alt="Paperclip" class="paperclip">
       <img src="/pilt2.png" alt="Extra Picture" class="extra-pic">
       <div class="caption rotate-left">Carmen Maar</div>
@@ -30,19 +30,34 @@ export default {
   data() {
     return {
       showBio: false,
-      isPhone: false // Add a flag to identify if it's a phone or not
+      isPhone: false, 
+      isButtonVisible: true 
     };
   },
   mounted() {
-    // Detect if it's a phone or not
+  
     this.isPhone = window.innerWidth <= 767;
+    
+    this.isButtonVisible = window.innerWidth <= 1647;
+    
+    window.addEventListener('resize', this.handleResize);
+  },
+  beforeDestroy() {
+    
+    window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      
+      this.isButtonVisible = window.innerWidth <= 1647;
+    }
   }
 };
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
-/* Your component-specific styles go here */
+
 .page {
   background-image: url('/pilt1.png');
   background-size: auto;
@@ -54,27 +69,27 @@ export default {
 .container {
   position: relative;
   padding: 20px;
-  color: #000000; /* Adjust text color as needed */
+  color: #000000; 
 }
 
 .profile-pic {
-  width: 300px; /* Adjust width as needed */
+  width: 260px; 
   height: auto;
   position: absolute;
   top: 100%;
   left: 22%;
 }
 .paperclip {
-  width: 90px; /* Adjust width as needed */
+  width: 90px;
   height: auto;
   position: absolute;
-  top: 30%; /* Adjust position */
-  left: 28%; /* Adjust position */
+  top: 30%; 
+  left: 28%; 
   transform: rotate(20deg);
 }
 
 .extra-pic {
-  width: 480px; /* Adjust width as needed */
+  width: 480px; 
   height: auto;
   position: absolute;
   top: 750%;
@@ -98,7 +113,7 @@ export default {
   font-family: 'Shadows Into Light', cursive;
 }
 .rotate-left {
-  transform: rotate(-8deg); /* Adjust rotation angle as needed */
+  transform: rotate(-8deg); 
 }
 
 .skills-pic {
@@ -131,14 +146,14 @@ export default {
   }
   .more-button {
     position: absolute;
-    top: 10px; /* Adjust top position as needed */
-    left: -110px; /* Adjust left position as needed */
-    z-index: 100; /* Ensure button is above other content */
+    top: 10px; 
+    left: -110px; 
+    z-index: 100; 
   }
 
   .bio-modal img.phone-about-me {
-    max-width: 90%; /* Adjust maximum width as needed */
-    max-height: 90vh; /* Adjust maximum height as needed */
+    max-width: 90%; 
+    max-height: 90vh; 
     cursor: pointer;
   }
 
@@ -154,27 +169,27 @@ export default {
   .container {
     position: relative;
     padding: 20px;
-    color: #000000; /* Adjust text color as needed */
+    color: #000000; 
   }
 
   .profile-pic {
-    width: 100px; /* Adjust width as needed */
+    width: 100px; 
     height: auto;
     position: absolute;
     top: 500%;
     left: 5%;
   }
   .paperclip {
-    width: 50px; /* Adjust width as needed */
+    width: 50px; 
     height: auto;
     position: absolute;
-    top: 415%; /* Adjust position */
-    left: 10%; /* Adjust position */
+    top: 415%; 
+    left: 10%; 
     transform: rotate(20deg);
   }
 
   .extra-pic {
-    width: 250px; /* Adjust width as needed */
+    width: 250px; 
     height: auto;
     position: absolute;
     top: 750%;
@@ -198,7 +213,7 @@ export default {
     font-family: 'Shadows Into Light', cursive;
   }
   .rotate-left {
-    transform: rotate(-8deg); /* Adjust rotation angle as needed */
+    transform: rotate(-8deg); 
   }
 
   .skills-pic {
